@@ -1,2 +1,9 @@
 # envu
-The simplest possible syntax for loading the .env file and system environment variables
+
+`envu` is a minimal Python package to load environment variables from a `.env` file and the operating system.
+
+## Installation
+
+```sh
+pip install envu
+```

@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "envu"
+version = "0.1.0"
+packages = [
+    { include = "env.py" },
+]
+description = "The simplest possible syntax for loading the .env file and system environment variables."
+keywords = ["env", ".env", "environment", "environment variables"]
+authors = ["Mohammad Hashem Nowruzi <hashem.nowruzi@outlook.com>"]
+maintainers = ["Mohammad Hashem Nowruzi <hashem.nowruzi@outlook.com>"]
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/hashem-nowruzi/envu"
+repository = "https://github.com/hashem-nowruzi/envu"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Django",
+    "Framework :: Flask",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries",
+]
+
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/hashem-nowruzi/envu/issues"
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

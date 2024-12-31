@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "envu"
-version = "0.1.0"
+version = "1.0.0"
 packages = [
     { include = "env.py" },
 ]
-description = "The simplest possible syntax for loading the .env file and system environment variables."
+description = "The simplest possible syntax for loading environment variables from the .env file."
 keywords = ["env", ".env", "environment", "environment variables"]
 authors = ["Mohammad Hashem Nowruzi <hashem.nowruzi@outlook.com>"]
 maintainers = ["Mohammad Hashem Nowruzi <hashem.nowruzi@outlook.com>"]

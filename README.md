@@ -52,6 +52,59 @@ True
 
 ```
 
+### Example: How do I use it with Django?
+
+For a typical Django project, the `.env` file is placed like this:
+
+```bash
+my_project/
+├── .env                 # Your environment variables
+├── manage.py            # Django project entry point
+├── my_project/          # Main application folder
+│   ├── __init__.py
+│   ├── settings.py      # Django settings file where .env is loaded
+│   ├── urls.py
+│   └── wsgi.py
+└── apps/
+    ├── app1/
+    └── app2/
+```
+
+An example of Django settings
+
+```python
+import env
+from unipath import Path
+
+BASE_DIR = Path(__file__).parent
+
+
+SECRET_KEY = env.SECRET_KEY
+DEBUG = getattr(env, "DEBUG", False)
+ALLOWED_HOSTS = env.ALLOWED_HOSTS.split(",")
+
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env.DJANGO_DB_NAME,
+        "USER": env.DJANGO_DB_USERNAME,
+        "PASSWORD": env.DJANGO_DB_PASSWORD,
+        "PORT": getattr(env, "DJANGO_DB_PORT", 5432),
+        "HOST": getattr(env, "DJANGO_DB_HOST", "localhost"),
+    }
+}
+
+
+EMAIL_HOST_PASSWORD = env.EMAIL_HOST_PASSWORD
+EMAIL_HOST_USER = env.EMAIL_HOST_USER
+EMAIL_PORT = getattr(env, "EMAIL_PORT", 25)
+EMAIL_HOST = getattr(env, "EMAIL_HOST", "localhost")
+EMAIL_USE_TLS = getattr(env, "EMAIL_USE_TLS", False)
+
+# ...
+```
+
 ## Running Tests
 
 To run the tests, make sure you have `pytest` installed. You can install it using `requirements.txt`:

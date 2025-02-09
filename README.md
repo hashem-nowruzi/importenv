@@ -1,6 +1,6 @@
 # envu
 
-This package provides a convenient way to load environment variables from a `.env` file, automatically parsing them into appropriate Python types (`bool`, `int`, `float`, or `str`). It also allows you to access the loaded variables as attributes.
+This package provides a convenient way to load environment variables from the `.env` file and system environment variables, automatically parsing them into appropriate Python types (`bool`, `int`, `float`, or `str`). It also allows you to access the loaded variables as attributes.
 
 **Features:**
 

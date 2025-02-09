@@ -1,3 +1,5 @@
+import os
+
 import pytest 
 
 import env
@@ -35,3 +37,12 @@ def test_key_does_not_exist():
 
 def test__dir__():
     assert dir(env) == ['BOOLEAN_VARIABLE', 'FLOAT_VARIABLE', 'INTEGER_VARIABLE', 'STRING_VARIABLE']
+
+
+def test_system_environment_variable():
+    os.environ["KEY"] = "Value"
+    
+    assert hasattr(env, "KEY") is True
+    assert isinstance(env.KEY, str)
+    assert env.KEY == "Value"
+    

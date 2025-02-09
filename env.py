@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from typing import Any, Dict
 
@@ -49,6 +50,8 @@ variables = load_env(Path.cwd() / ".env")
 def __getattr__(name):
     if name in variables:
         return variables[name]
+    elif name in os.environ:
+        return os.environ[name]
     raise AttributeError(f"Environment variable '{name}' not found.")
 
 

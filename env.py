@@ -52,7 +52,7 @@ def __getattr__(name):
         return variables[name]
     elif name in os.environ:
         return os.environ[name]
-    raise AttributeError(f"Environment variable '{name}' not found.")
+    return None
 
 
 def __dir__():

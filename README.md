@@ -40,14 +40,9 @@ False
 ["localhost", "127.0.0.1", "example.com"]
 
 >>> env.UNDEFINED_VARIABLE  # Undefined Variable
-Traceback (most recent call last):
- ...
-AttributeError: Environment variable 'UNDEFINED_VARIABLE' not found.
+None
 
->>> hasattr(env, "KEY")  # Check if an environment variable exists
-True
-
->>> getattr(env, "MY_VARIABLE", "default_value")  # Get the variable with a default fallback
+>>> env.MY_VARIABLE or "default_value"  # Get the variable with a default fallback
 "default_value"
 
 ```
@@ -80,7 +75,7 @@ BASE_DIR = Path(__file__).parent
 
 
 SECRET_KEY = env.SECRET_KEY
-DEBUG = getattr(env, "DEBUG", False)
+DEBUG = env.DEBUG or False
 ALLOWED_HOSTS = env.ALLOWED_HOSTS.split(",")
 
 
@@ -90,17 +85,17 @@ DATABASES = {
         "NAME": env.DJANGO_DB_NAME,
         "USER": env.DJANGO_DB_USERNAME,
         "PASSWORD": env.DJANGO_DB_PASSWORD,
-        "PORT": getattr(env, "DJANGO_DB_PORT", 5432),
-        "HOST": getattr(env, "DJANGO_DB_HOST", "localhost"),
+        "PORT": env.DJANGO_DB_PORT or 5432,
+        "HOST": env.DJANGO_DB_HOST or "localhost",
     }
 }
 
 
 EMAIL_HOST_PASSWORD = env.EMAIL_HOST_PASSWORD
 EMAIL_HOST_USER = env.EMAIL_HOST_USER
-EMAIL_PORT = getattr(env, "EMAIL_PORT", 25)
-EMAIL_HOST = getattr(env, "EMAIL_HOST", "localhost")
-EMAIL_USE_TLS = getattr(env, "EMAIL_USE_TLS", False)
+EMAIL_PORT = env.EMAIL_PORT or 25
+EMAIL_HOST = env.EMAIL_HOST or "localhost"
+EMAIL_USE_TLS = env.EMAIL_USE_TLS or False
 
 # ...
 ```

@@ -1,4 +1,4 @@
-# envu
+# importenv
 
 This package provides a convenient way to load environment variables from the `.env` file and system environment variables, automatically parsing them into appropriate Python types (`bool`, `int`, `float`, or `str`). It also allows you to access the loaded variables as attributes.
 
@@ -13,13 +13,13 @@ This package provides a convenient way to load environment variables from the `.
 ## Installation
 
 ```sh
-pip install envu
+pip install importenv
 ```
 
 ## Usage
 
 ```python
->>> import env  # not envu
+>>> import env
 
 >>> env.KEY  # Access environment variables as attributes
 'Value'

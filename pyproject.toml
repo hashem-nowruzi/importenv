@@ -1,17 +1,17 @@
 [tool.poetry]
-name = "envu"
-version = "1.2.0"
+name = "importenv"
+version = "1.0.0"
 packages = [
     { include = "env.py" },
 ]
 description = "The simplest possible syntax for loading environment variables from the .env file and system environment variables."
-keywords = ["env", ".env", "environment", "environment variables"]
+keywords = ["import env", ".env", "environment", "environment variables"]
 authors = ["Mohammad Hashem Nowruzi <hashem.nowruzi@outlook.com>"]
 maintainers = ["Mohammad Hashem Nowruzi <hashem.nowruzi@outlook.com>"]
 readme = "README.md"
 license = "MIT"
-homepage = "https://github.com/hashem-nowruzi/envu"
-repository = "https://github.com/hashem-nowruzi/envu"
+homepage = "https://github.com/hashem-nowruzi/importenv"
+repository = "https://github.com/hashem-nowruzi/importenv"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Framework :: Django",
@@ -27,7 +27,7 @@ classifiers = [
 
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/hashem-nowruzi/envu/issues"
+"Bug Tracker" = "https://github.com/hashem-nowruzi/importenv/issues"
 
 
 [tool.poetry.dependencies]
